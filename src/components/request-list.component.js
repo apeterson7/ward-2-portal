@@ -12,6 +12,7 @@ class RequestList extends Component {
 
 
   componentDidMount() {
+    console.log(this.airtable_api_key);
     fetch('https://api.airtable.com/v0/appa6sKWNwbFaCvRG/delivery_requests?api_key='+this.airtable_api_key+'&view=Grid%20view')
     .then((resp) => resp.json())
     .then(data => {
