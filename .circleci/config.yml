@@ -11,11 +11,15 @@ jobs:
           steps:
             - run: yarn build
   deploy:
+    docker:
+      - image: buildpack-deps:trusty
     steps:
+      - checkout
       - run:
-          name: deploy master to heroku
-          command: git push heroku master
+          name: Deploy Master to Heroku
+          command: |
+            git push master heroku
 workflows:
-    deploy:
+    deploy-to-heroku:
       jobs:
         - deploy
