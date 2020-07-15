@@ -10,7 +10,12 @@ jobs:
       - node/with-cache:
           steps:
             - run: yarn build
+  deploy:
+    steps:
+      - run:
+          name: deploy master to heroku
+          command: git push heroku master
 workflows:
-    build:
+    deploy:
       jobs:
-        - build
+        - deploy
