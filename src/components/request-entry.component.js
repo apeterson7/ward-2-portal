@@ -278,7 +278,9 @@ onSubmit(e) {
 
 render(){
 return (
-    <div>
+    <div class="row">
+        <div class="col-1"></div>
+        <div class="col-10">
         <h3>Submit Request</h3>
         <form onSubmit={this.onSubmit}>
             <div className="row">
@@ -362,12 +364,13 @@ return (
                     className="form-control"
                     value={this.state.notes}
                     onChange={this.onNotesChange}></textarea>
-                    
             </div>
             <div className="form-group">
                 <input type="submit" value="Submit Request" className="btn btn-primary" />
             </div>
         </form>
+        </div>
+        <div class="col-1"></div>
     </div>
     );
   }

@@ -8,7 +8,6 @@ class RequestList extends Component {
       requests: [],
     };
     this.airtable_api_key=process.env.REACT_APP_AIRTABLE_API_KEY;
-
   }
 
 
@@ -25,24 +24,28 @@ class RequestList extends Component {
 
   render(){
     return (
-        <div>
+        <div class="row">
+          <div class="col-1"></div>
+          <div class="col-10">
             <table class="table">
-            <thead>
-                <th>Received</th>
-                <th>Type</th>
-                <th>Name</th>
-                <th>Address</th>
-                <th>Phone</th>
-                <th>Preferred Contact</th>
-                <th>Items</th>
-                <th>Notes</th>
-                <th>Status</th>
-                <th>Language</th>
-              </thead>
-              <tbody>
-                {this.state.requests.map(request => <Request {...request.fields} /> )}
-              </tbody>
-            </table>
+              <thead>
+                  <th>Received</th>
+                  <th>Type</th>
+                  <th>Name</th>
+                  <th>Address</th>
+                  <th>Phone</th>
+                  <th>Preferred Contact</th>
+                  <th>Items</th>
+                  <th>Notes</th>
+                  <th>Status</th>
+                  <th>Language</th>
+                </thead>
+                <tbody>
+                  {this.state.requests.map(request => <Request {...request.fields} /> )}
+                </tbody>
+              </table>
+          </div>
+          <div class="col-1"></div>
         </div>
     );
   }

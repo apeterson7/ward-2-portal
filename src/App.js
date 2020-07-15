@@ -19,16 +19,10 @@ class App extends Component {
         <div className="Container">
           <Navbar />
           <br/>
-          <div className="row">
-            <div className="col-2"></div>
-            <div className="col-8">
               <Route path="/" exact component={RequestList} />
               <Route path="/create" component={RequestEntry} />
               <Route path="/receipt" component={ReceiptConfirmation} />
               <Route path="/map" component={RequestMap} />
-            </div>
-            <div className="col-2"></div>
-          </div>
         </div>
       </Router>
     );
